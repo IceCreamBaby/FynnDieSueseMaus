@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var selectedDate = new Date(document.getElementById("birthday").value);
             var florianBirthday = new Date(selectedDate.getFullYear(), 7, 17); // 7 ist der August
 
-            if (selectedDate.toDateString() === florianBirthday.toDateString()) {
+            if (selectedDate.getMonth() === florianBirthday.getMonth() && selectedDate.getDate() === florianBirthday.getDate()) {
                 window.location.href = "glueckwunsch.html";
             } else {
                 alert("Das ist nicht Florians Geburtstag!");
