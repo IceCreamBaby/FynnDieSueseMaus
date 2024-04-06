@@ -10,23 +10,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (today.toDateString() === birthday.toDateString()) {
             window.location.href = "frage.html";
+        } else {
+            document.body.innerHTML = "<h1>Du hast noch nicht Geburtstag!!!</h1>";
         }
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        var form = document.getElementById("birthdayForm");
-        if (form) {
-            form.addEventListener("submit", function(event) {
-                event.preventDefault();
-                var selectedDate = new Date(document.getElementById("birthday").value);
-                var florianBirthday = new Date(selectedDate.getFullYear(), 7, 17); // 7 ist der August
+        document.getElementById("birthdayForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var selectedDate = new Date(document.getElementById("birthday").value);
+            var florianBirthday = new Date(selectedDate.getFullYear(), 7, 17); // 7 ist der August
 
-                if (selectedDate.getMonth() === florianBirthday.getMonth() && selectedDate.getDate() === florianBirthday.getDate()) {
-                    window.location.href = "glueckwunsch.html";
-                } else {
-                    alert("Das ist nicht Florians Geburtstag!");
-                }
-            });
-        }
+            if (selectedDate.toDateString() === florianBirthday.toDateString()) {
+                window.location.href = "glueckwunsch.html";
+            } else {
+                alert("Das ist nicht Florians Geburtstag!");
+            }
+        });
     });
 });
