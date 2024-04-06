@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.onload = function() {
         var today = new Date();
-        var birthday = new Date(today.getFullYear(), 3, 6); // Monat ist 0-basiert, also ist 3 der April
+        var birthday = new Date(today.getFullYear(), 3, 6, 2024); // Monat ist 0-basiert, also ist 3 der April
         var florianBirthday = new Date(today.getFullYear(), 7, 17); // 7 ist der August
 
         if (today.toDateString() === birthday.toDateString()) {
